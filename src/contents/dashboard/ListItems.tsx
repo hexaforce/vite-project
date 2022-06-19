@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as Preact from 'preact';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -11,7 +11,7 @@ import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 
 export const MainListItems = (
-  <React.Fragment>
+  <Preact.Fragment>
     <ListItemButton>
       <ListItemIcon>
         <DashboardIcon />
@@ -42,11 +42,11 @@ export const MainListItems = (
       </ListItemIcon>
       <ListItemText primary="Integrations" />
     </ListItemButton>
-  </React.Fragment>
+  </Preact.Fragment>
 );
 
 export const SecondaryListItems = (
-  <React.Fragment>
+  <Preact.Fragment>
     <ListSubheader component="div" inset>
       Saved reports
     </ListSubheader>
@@ -68,5 +68,5 @@ export const SecondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="Year-end sale" />
     </ListItemButton>
-  </React.Fragment>
+  </Preact.Fragment>
 );

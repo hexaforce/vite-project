@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import * as Preact from 'preact';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -83,7 +83,7 @@ const footers = [
 
 function PricingContent() {
   return (
-    <div>
+    <Preact.Fragment>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
       <CssBaseline />
       <AppBar
@@ -166,7 +166,7 @@ function PricingContent() {
                     align: 'center',
                   }}
                   sx={{
-                    backgroundColor: (theme) =>
+                    backgroundColor: (theme: any) =>
                       theme.palette.mode === 'light'
                         ? theme.palette.grey[200]
                         : theme.palette.grey[700],
@@ -242,10 +242,10 @@ function PricingContent() {
             </Grid>
           ))}
         </Grid>
-        <Copyright sx={{ mt: 5 }} />
+        <Copyright />
       </Container>
       {/* End footer */}
-    </div>
+    </Preact.Fragment>
   );
 }
 

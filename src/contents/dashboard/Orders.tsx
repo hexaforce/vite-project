@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as Preact from 'preact';
 import Link from '@mui/material/Link';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -61,7 +61,7 @@ function preventDefault(event: React.MouseEvent) {
 
 export default function Orders() {
   return (
-    <React.Fragment>
+    <Preact.Fragment>
       <Title>Recent Orders</Title>
       <Table size="small">
         <TableHead>
@@ -88,6 +88,6 @@ export default function Orders() {
       <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
         See more orders
       </Link>
-    </React.Fragment>
+    </Preact.Fragment>
   );
 }
