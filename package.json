@@ -1,0 +1,26 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "2.9.9",
+  "scripts": {
+    "dev": "react-app-rewired & vite",
+    "build": "tsc && react-app-rewired & vite build",
+    "preview": "react-app-rewired & vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "preact": "latest",
+    "preact-router": "latest",
+    "recharts": "latest"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "latest",
+    "customize-cra": "latest",
+    "react-app-rewired": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  }
+}
