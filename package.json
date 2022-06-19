@@ -15,16 +15,16 @@
     "@mui/material": "latest",
     "preact": "latest",
     "preact-router": "latest",
-    "recharts": "latest",
-    "react-scripts": "latest"
+    "react-scripts": "latest",
+    "recharts": "latest"
   },
   "devDependencies": {
     "@preact/preset-vite": "latest",
     "@trivago/prettier-plugin-sort-imports": "latest",
     "customize-cra": "latest",
+    "prettier": "latest",
     "react-app-rewired": "latest",
     "typescript": "latest",
-    "prettier": "latest",
     "vite": "latest"
   }
 }
