@@ -1,7 +1,7 @@
-import { h, Fragment } from 'preact'
-import { useTheme } from '@mui/material/styles'
-import { LineChart, Line, XAxis, YAxis, Label, ResponsiveContainer } from 'recharts'
 import Title from './Title'
+import { Fragment, h } from 'preact'
+import { Label, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { useTheme } from '@mui/material/styles'
 
 // Generate Sales Data
 function createData(time: string, amount?: number) {

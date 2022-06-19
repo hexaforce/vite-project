@@ -1,4 +1,4 @@
-import { h, Component, render } from 'preact'
+import { Component, h, render } from 'preact'
 import { Router, route } from 'preact-router'
 import Album from '@/contents/Album'
 import Pricing from '@/contents/Pricing'

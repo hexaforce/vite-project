@@ -9,7 +9,8 @@
   "importOrder": [
     "^@mui/material/(.*)$",
     "^@mui/material/styles$",
-    "^@mui/icons-material/(.*)$"
+    "^@mui/icons-material/(.*)$",
+    "^@/(.*)$"
   ],
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true

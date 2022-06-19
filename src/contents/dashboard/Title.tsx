@@ -1,4 +1,4 @@
-import { h, ComponentChildren } from 'preact'
+import { ComponentChildren, h } from 'preact'
 import Typography from '@mui/material/Typography'
 
 interface TitleProps {
