@@ -1,0 +1,10 @@
+vite.config.ts
+config-overrides.js
+tsconfig.node.json
+tsconfig.json
+
+amplify
+build
+src/graphql
+aws-exports.js
+API.ts

@@ -3,6 +3,7 @@
   "private": true,
   "version": "2.9.9",
   "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,json,html}\"",
     "dev": "react-app-rewired & vite",
     "build": "tsc && react-app-rewired & vite build",
     "preview": "react-app-rewired & vite preview"
@@ -19,9 +20,11 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "latest",
+    "@trivago/prettier-plugin-sort-imports": "latest",
     "customize-cra": "latest",
     "react-app-rewired": "latest",
     "typescript": "latest",
+    "prettier": "latest",
     "vite": "latest"
   }
 }
