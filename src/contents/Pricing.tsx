@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { h } from 'preact'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 
+import Link from '@mui/material/Link';
 import Copyright from '@/contents/component/Copyright';
 
 const tiers = [
@@ -82,7 +83,7 @@ const footers = [
 
 function PricingContent() {
   return (
-    <React.Fragment>
+    <div>
       <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
       <CssBaseline />
       <AppBar
@@ -244,7 +245,7 @@ function PricingContent() {
         <Copyright sx={{ mt: 5 }} />
       </Container>
       {/* End footer */}
-    </React.Fragment>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { h } from 'preact'
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import CameraIcon from '@mui/icons-material/PhotoCamera';

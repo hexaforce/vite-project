@@ -14,7 +14,8 @@
     "@mui/material": "latest",
     "preact": "latest",
     "preact-router": "latest",
-    "recharts": "latest"
+    "recharts": "latest",
+    "react-scripts": "latest"
   },
   "devDependencies": {
     "@preact/preset-vite": "latest",
