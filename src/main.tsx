@@ -20,49 +20,47 @@ import Dashboard from '@/contents/dashboard/Dashboard'
 /** Stateless app */
 const App = () => (
   <div class='app'>
-    <Header />
+    {/* <Header /> */}
     <Router>
-      <Home path='/' />
+      {/* <Home path='/' /> */}
       <Album path='/Album' />
       <Pricing path='/Pricing' />
       <SignIn path='/SignIn' />
       <SignInSide path='/SignInSide' />
       <SignUp path='/SignUp' />
       <StickyFooter path='/StickyFooter' />
-      <Dashboard path='/Dashboard' />
-      {/* <Profile path="/profile/:user?" />
-      <Error type="404" default /> */}
+      <Dashboard path='/' />
+      {/* <Profile path="/profile/:user?" /> */}
       <Error type='404' default />
     </Router>
   </div>
 )
 
 /** demo header nav+search */
-const Header = () => (
-  <header>
-    <nav>
-      <a href='/'>Home</a>
-      <a href='/Album'>Album</a>
-      <a href='/Pricing'>Pricing</a>
-      <a href='/SignIn'>SignIn</a>
-      <a href='/SignInSide'>SignInSide</a>
-      <a href='/SignUp'>SignUp</a>
-      <a href='/StickyFooter'>StickyFooter</a>
-      <a href='/Dashboard'>Dashboard</a>
-      {/* <a href="/profile">Profile</a>
-      <a href="/profile/john">John</a> */}
-      <a href='/asdf'>Error</a>
-    </nav>
-    {/* <input type="search" placeholder="Search..." onSearch={e => search(e.target.value)} /> */}
-  </header>
-)
+// const Header = () => (
+//   <header>
+//     <nav>
+//       <a href='/'>Home</a>
+//       <a href='/Album'>Album</a>
+//       <a href='/Pricing'>Pricing</a>
+//       <a href='/SignIn'>SignIn</a>
+//       <a href='/SignInSide'>SignInSide</a>
+//       <a href='/SignUp'>SignUp</a>
+//       <a href='/StickyFooter'>StickyFooter</a>
+//       {/* <a href="/profile">Profile</a>
+//       <a href="/profile/john">John</a> */}
+//       <a href='/asdf'>Error</a>
+//     </nav>
+//     {/* <input type="search" placeholder="Search..." onSearch={e => search(e.target.value)} /> */}
+//   </header>
+// )
 
 /** our index route */
 class Home extends Component {
   setText = (e: any) => {
     this.setState({ text: e.target.value })
   }
-  render({}, { text = 'Some Text' }) {
+  render({ }, { text = 'Some Text' }) {
     return (
       <section class='home'>
         <input value={text} onInput={this.setText} />

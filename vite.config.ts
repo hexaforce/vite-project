@@ -4,7 +4,6 @@ const path = require('path');
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: "/src/",
   resolve: {
     alias: [
       { find: '@', replacement: path.resolve(__dirname, 'src') },
@@ -12,4 +11,3 @@ export default defineConfig({
   },
   plugins: [preact()]
 })
-

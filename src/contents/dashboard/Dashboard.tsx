@@ -13,7 +13,7 @@ import Divider from '@mui/material/Divider'
 import MuiDrawer from '@mui/material/Drawer'
 import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
-import Link from '@mui/material/Link'
+
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
@@ -33,6 +33,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import PeopleIcon from '@mui/icons-material/People'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Copyright from '@/contents/component/Copyright'
+import { Link } from 'preact-router/match';
 
 const drawerWidth: number = 240
 
@@ -83,6 +84,21 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 }))
 
 const mdTheme = createTheme()
+
+
+function MenuLink(props: any) {
+  const { icon, text, href } = props
+  return (
+    <Link activeClassName="active" href={href}>
+      <ListItemButton>
+        <ListItemIcon>
+          {icon}
+        </ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItemButton>
+    </Link>
+  )
+}
 
 function DashboardContent() {
   const [open, setOpen] = useState(true)
@@ -137,58 +153,17 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component='nav'>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary='Dashboard' />
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemIcon>
-                <ShoppingCartIcon />
-              </ListItemIcon>
-              <ListItemText primary='Orders' />
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemIcon>
-                <PeopleIcon />
-              </ListItemIcon>
-              <ListItemText primary='Customers' />
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemIcon>
-                <BarChartIcon />
-              </ListItemIcon>
-              <ListItemText primary='Reports' />
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemIcon>
-                <LayersIcon />
-              </ListItemIcon>
-              <ListItemText primary='Integrations' />
-            </ListItemButton>
+            <MenuLink icon={<DashboardIcon />} text='Home' href='/' />
+            <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' />
+            <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' />
+            <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' />
+            <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' />
+            <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' />
             <Divider sx={{ my: 1 }} />
             <ListSubheader component='div' inset>
-              Saved reports
+              管理者メニュー
             </ListSubheader>
-            <ListItemButton>
-              <ListItemIcon>
-                <AssignmentIcon />
-              </ListItemIcon>
-              <ListItemText primary='Current month' />
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemIcon>
-                <AssignmentIcon />
-              </ListItemIcon>
-              <ListItemText primary='Last quarter' />
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemIcon>
-                <AssignmentIcon />
-              </ListItemIcon>
-              <ListItemText primary='Year-end sale' />
-            </ListItemButton>
+            <MenuLink icon={<DashboardIcon />} text='StickyFooter' href='/StickyFooter' />
           </List>
         </Drawer>
         <Box
