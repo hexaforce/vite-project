@@ -15,6 +15,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ListSubheader from '@mui/material/ListSubheader'
 import Toolbar from '@mui/material/Toolbar'
+import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles'
 import AssignmentIcon from '@mui/icons-material/Assignment'
@@ -81,12 +83,10 @@ const mdTheme = createTheme()
 function MenuLink(props: any) {
   const { icon, text, href } = props
   return (
-    <Link activeClassName='active' href={href}>
-      <ListItemButton>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItemButton>
-    </Link>
+    <ListItemButton href={href}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText primary={text} />
+    </ListItemButton>
   )
 }
 
@@ -119,13 +119,23 @@ export default function App({ children, path }: { children: JSX.Element; path: s
               <MenuIcon />
             </IconButton>
             <Typography component='h1' variant='h6' color='inherit' noWrap sx={{ flexGrow: 1 }}>
-              Dashboard
+              AIエディタ
             </Typography>
+            {/* 
             <IconButton color='inherit'>
               <Badge badgeContent={4} color='secondary'>
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            */}
+            <Stack direction="row" spacing={2}>
+              <Button variant="contained" color="secondary" href="/SignIn">
+                ログイン
+              </Button>
+              <Button variant="outlined" color="inherit" href="/SignUp">
+                新規登録
+              </Button>
+            </Stack>
           </Toolbar>
         </AppBar>
         <Drawer variant='permanent' open={open}>
@@ -144,10 +154,11 @@ export default function App({ children, path }: { children: JSX.Element; path: s
           <Divider />
           <List component='nav'>
             <MenuLink icon={<DashboardIcon />} text='Home' href='/' />
-            <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' />
-            <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' />
+            {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
+            {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
             <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
             <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' />
+            <MenuLink icon={<PeopleIcon />} text='Article' href='/Article' />
             <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' />
             <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' />
             <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' />
