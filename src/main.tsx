@@ -1,5 +1,6 @@
 import { Component, h, render } from 'preact'
 import { Router, route } from 'preact-router'
+import MenuLayout from '@/MenuLayout'
 import Album from '@/contents/Album'
 import Pricing from '@/contents/Pricing'
 import SignIn from '@/contents/SignIn'
@@ -7,7 +8,7 @@ import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
 import Dashboard from '@/contents/dashboard/Dashboard'
-import App2 from '@/App'
+import Content from '@/contents/dashboard/DashboardContent'
 
 // const { h, Component, render } = preact; /** @jsx h */
 // const { Router, route } = preactRouter;
@@ -24,15 +25,21 @@ const App = () => (
     {/* <Header /> */}
     <Router>
       {/* <Home path='/' /> */}
-      <App2 path='/Album2'><Album /></App2>
+      <MenuLayout path='/'>
+        <Content />
+      </MenuLayout>
+      <MenuLayout path='/Album2'>
+        <Album />
+      </MenuLayout>
       <Album path='/Album' />
-      <App2 path='/Pricing2'><Pricing /></App2>
+      <MenuLayout path='/Pricing2'>
+        <Pricing />
+      </MenuLayout>
       <Pricing path='/Pricing' />
       <SignIn path='/SignIn' />
       <SignInSide path='/SignInSide' />
       <SignUp path='/SignUp' />
       <StickyFooter path='/StickyFooter' />
-      <Dashboard path='/' />
       {/* <Profile path="/profile/:user?" /> */}
       <Error type='404' default />
     </Router>

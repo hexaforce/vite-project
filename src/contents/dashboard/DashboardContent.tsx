@@ -4,7 +4,6 @@ import Deposits from './Deposits'
 import Orders from './Orders'
 import { h } from 'preact'
 import Grid from '@mui/material/Grid'
-
 import Paper from '@mui/material/Paper'
 
 export default function DashboardContent() {

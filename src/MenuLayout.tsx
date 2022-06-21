@@ -1,6 +1,5 @@
-import Content from '@/contents/dashboard/DashboardContent'
-
 import { h } from 'preact'
+import { Link } from 'preact-router/match'
 import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import Badge from '@mui/material/Badge'
@@ -10,7 +9,6 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Divider from '@mui/material/Divider'
 import MuiDrawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
-
 import List from '@mui/material/List'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
@@ -29,7 +27,6 @@ import NotificationsIcon from '@mui/icons-material/Notifications'
 import PeopleIcon from '@mui/icons-material/People'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Copyright from '@/contents/component/Copyright'
-import { Link } from 'preact-router/match';
 
 const drawerWidth: number = 240
 
@@ -81,22 +78,19 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme()
 
-
 function MenuLink(props: any) {
   const { icon, text, href } = props
   return (
-    <Link activeClassName="active" href={href}>
+    <Link activeClassName='active' href={href}>
       <ListItemButton>
-        <ListItemIcon>
-          {icon}
-        </ListItemIcon>
+        <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={text} />
       </ListItemButton>
     </Link>
   )
 }
 
-function DashboardContent() {
+export default function App({ children, path }: { children: JSX.Element; path: string }) {
   const [open, setOpen] = useState(false)
   const toggleDrawer = () => {
     setOpen(!open)
@@ -152,6 +146,8 @@ function DashboardContent() {
             <MenuLink icon={<DashboardIcon />} text='Home' href='/' />
             <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' />
             <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' />
+            <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
+            <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' />
             <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' />
             <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' />
             <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' />
@@ -173,15 +169,11 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth='lg' sx={{ mt: 4, mb: 4 }}>
-            <Content />
+            {children}
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>
     </ThemeProvider>
   )
-}
-
-export default function Dashboard(props: any) {
-  return <DashboardContent />
 }
