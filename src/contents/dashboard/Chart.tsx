@@ -1,6 +1,6 @@
 import Title from './Title'
-import { Fragment, h } from 'preact'
 import { Label, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
+import { Fragment, h } from 'preact'
 import { useTheme } from '@mui/material/styles'
 
 // Generate Sales Data
