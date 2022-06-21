@@ -153,15 +153,16 @@ export default function App({ children, path }: { children: JSX.Element; path: s
           </Toolbar>
           <Divider />
           <List component='nav'>
-            <MenuLink icon={<DashboardIcon />} text='Home' href='/' />
+            <MenuLink icon={<DashboardIcon />} text='作成した記事一覧' href='/' />
+            <MenuLink icon={<ShoppingCartIcon />} text='新しい記事' href='/Write' />
             {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
             {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
             <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
             <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' />
-            <MenuLink icon={<PeopleIcon />} text='Article' href='/Article' />
-            <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' />
-            <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' />
-            <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' />
+            <MenuLink icon={<PeopleIcon />} text='コンテンツ' href='/Content' />
+            {/* <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' /> */}
+            {/* <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' /> */}
+            {/* <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' /> */}
             <Divider sx={{ my: 1 }} />
             <ListSubheader component='div' inset>
               管理者メニュー

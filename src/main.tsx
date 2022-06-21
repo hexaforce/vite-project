@@ -8,6 +8,7 @@ import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
 import Article from '@/contents/Article'
+import Write from '@/contents/Write'
 import Content from '@/contents/dashboard/DashboardContent'
 
 /** Stateless app */
@@ -15,16 +16,17 @@ const App = () => (
   <div class='app'>
     <Router>
       <MenuLayout path='/'>
-        <Content />
+        <Article />
       </MenuLayout>
+      <Write path='/Write' />
       <MenuLayout path='/Album2'>
         <Album />
       </MenuLayout>
       <MenuLayout path='/Pricing2'>
         <Pricing />
       </MenuLayout>
-      <MenuLayout path='/Article'>
-        <Article />
+      <MenuLayout path='/Content'>
+        <Content />
       </MenuLayout>
       <SignIn path='/SignIn' />
       <SignInSide path='/SignInSide' />
