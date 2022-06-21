@@ -1,5 +1,3 @@
-import Content from '@/contents/dashboard/DashboardContent'
-
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
@@ -96,7 +94,7 @@ function MenuLink(props: any) {
   )
 }
 
-function DashboardContent() {
+export default function App({ children, path }: { children: JSX.Element, path: string }) {
   const [open, setOpen] = useState(false)
   const toggleDrawer = () => {
     setOpen(!open)
@@ -152,6 +150,8 @@ function DashboardContent() {
             <MenuLink icon={<DashboardIcon />} text='Home' href='/' />
             <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' />
             <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' />
+            <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
+            <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' />
             <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' />
             <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' />
             <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' />
@@ -173,15 +173,11 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth='lg' sx={{ mt: 4, mb: 4 }}>
-            <Content />
+            {children}
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>
     </ThemeProvider>
   )
-}
-
-export default function Dashboard(props: any) {
-  return <DashboardContent />
 }

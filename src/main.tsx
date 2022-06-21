@@ -7,6 +7,7 @@ import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
 import Dashboard from '@/contents/dashboard/Dashboard'
+import App2 from '@/App'
 
 // const { h, Component, render } = preact; /** @jsx h */
 // const { Router, route } = preactRouter;
@@ -23,7 +24,9 @@ const App = () => (
     {/* <Header /> */}
     <Router>
       {/* <Home path='/' /> */}
+      <App2 path='/Album2'><Album /></App2>
       <Album path='/Album' />
+      <App2 path='/Pricing2'><Pricing /></App2>
       <Pricing path='/Pricing' />
       <SignIn path='/SignIn' />
       <SignInSide path='/SignInSide' />
@@ -56,19 +59,19 @@ const App = () => (
 // )
 
 /** our index route */
-class Home extends Component {
-  setText = (e: any) => {
-    this.setState({ text: e.target.value })
-  }
-  render({ }, { text = 'Some Text' }) {
-    return (
-      <section class='home'>
-        <input value={text} onInput={this.setText} />
-        <div>In caps: {text.toUpperCase()}</div>
-      </section>
-    )
-  }
-}
+// class Home extends Component {
+//   setText = (e: any) => {
+//     this.setState({ text: e.target.value })
+//   }
+//   render({ }, { text = 'Some Text' }) {
+//     return (
+//       <section class='home'>
+//         <input value={text} onInput={this.setText} />
+//         <div>In caps: {text.toUpperCase()}</div>
+//       </section>
+//     )
+//   }
+// }
 
 /** fall-back route (handles unroutable URLs) */
 const Error = (props: any) => (
