@@ -7,16 +7,34 @@ import SignIn from '@/contents/SignIn'
 import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
-import Article from '@/contents/Article'
+import ArticleList from '@/contents/ArticleList'
 import Write from '@/contents/Write'
 import Content from '@/contents/dashboard/DashboardContent'
+import ThemeSelectio from '@/contents/ThemeSelectio'
 
 /** Stateless app */
-const App = () => (
-  <div class='app'>
-    <Router>
+const Main = () => {
+
+  const isAuthenticated = async () => {
+    return true
+  }
+
+  const handleRoute = async (e: any) => {
+    switch (e.url) {
+      case '/profile':
+        const isAuthed = await isAuthenticated();
+        if (!isAuthed) route('/', true);
+        break;
+    }
+  }
+
+  return (
+    <Router onChange={handleRoute}>
+      <MenuLayout path='/ThemeSelectio'>
+        <ThemeSelectio />
+      </MenuLayout>
       <MenuLayout path='/'>
-        <Article />
+        <ArticleList />
       </MenuLayout>
       <Write path='/Write' />
       <MenuLayout path='/Album2'>
@@ -36,8 +54,8 @@ const App = () => (
       {/* <Profile path="/profile/:user?" /> */}
       <Error type='404' default />
     </Router>
-  </div>
-)
+  )
+}
 
 /** fall-back route (handles unroutable URLs) */
 const Error = (props: any) => (
@@ -48,4 +66,4 @@ const Error = (props: any) => (
   </section>
 )
 
-render(<App />, document.body)
+render(<Main />, document.body)

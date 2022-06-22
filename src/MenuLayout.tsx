@@ -33,6 +33,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import PeopleIcon from '@mui/icons-material/People'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Copyright from '@/contents/component/Copyright'
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 const drawerWidth: number = 240
 
@@ -99,13 +100,11 @@ function MenuLink(props: any) {
 function MenuLinkPro(props: any) {
   const { icon, text, href } = props
   return (
-    <Fragment>
-      <ListItemButton href={href}>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItemButton>
-      <Chip sx={{ ml: 15, mt: -4 }} label="Pro Plan" color="primary" variant="outlined" size="small" />
-    </Fragment>
+    <ListItemButton href={href} sx={{ height: 50 }}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText primary={text} />
+      <Chip sx={{ mt: 6 }} label="Pro Plan" color="primary" variant="outlined" size="small" />
+    </ListItemButton>
   )
 }
 
@@ -172,9 +171,10 @@ export default function App({ children, path }: { children: JSX.Element; path: s
           </Toolbar>
           <Divider />
           <List component='nav'>
-            <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/Write' />
+            <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/ThemeSelectio' />
             <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
             <MenuLinkPro icon={<PsychologyIcon />} text='AIサポート機能' href='/Pricing' />
+            <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/Content' />
             {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
             {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
             {/* <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
