@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { Fragment, h } from 'preact'
 import { Link } from 'preact-router/match'
 import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
@@ -17,6 +17,8 @@ import ListSubheader from '@mui/material/ListSubheader'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
+import Chip from '@mui/material/Chip'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import Typography from '@mui/material/Typography'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles'
 import AssignmentIcon from '@mui/icons-material/Assignment'
@@ -25,7 +27,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import LayersIcon from '@mui/icons-material/Layers'
 import MenuIcon from '@mui/icons-material/Menu'
-import NotificationsIcon from '@mui/icons-material/Notifications'
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import EditIcon from '@mui/icons-material/Edit';
+import PsychologyIcon from '@mui/icons-material/Psychology';
 import PeopleIcon from '@mui/icons-material/People'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Copyright from '@/contents/component/Copyright'
@@ -83,10 +87,25 @@ const mdTheme = createTheme()
 function MenuLink(props: any) {
   const { icon, text, href } = props
   return (
-    <ListItemButton href={href}>
-      <ListItemIcon>{icon}</ListItemIcon>
-      <ListItemText primary={text} />
-    </ListItemButton>
+    <Fragment>
+      <ListItemButton href={href}>
+        <ListItemIcon>{icon}</ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItemButton>
+    </Fragment>
+  )
+}
+
+function MenuLinkPro(props: any) {
+  const { icon, text, href } = props
+  return (
+    <Fragment>
+      <ListItemButton href={href}>
+        <ListItemIcon>{icon}</ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItemButton>
+      <Chip sx={{ ml: 15, mt: -4 }} label="Pro Plan" color="primary" variant="outlined" size="small" />
+    </Fragment>
   )
 }
 
@@ -153,13 +172,14 @@ export default function App({ children, path }: { children: JSX.Element; path: s
           </Toolbar>
           <Divider />
           <List component='nav'>
-            <MenuLink icon={<DashboardIcon />} text='作成した記事一覧' href='/' />
-            <MenuLink icon={<ShoppingCartIcon />} text='新しい記事' href='/Write' />
+            <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/Write' />
+            <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
+            <MenuLinkPro icon={<PsychologyIcon />} text='AIサポート機能' href='/Pricing' />
             {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
             {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
-            <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
+            {/* <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
             <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' />
-            <MenuLink icon={<PeopleIcon />} text='コンテンツ' href='/Content' />
+            <MenuLink icon={<PeopleIcon />} text='コンテンツ' href='/Content' /> */}
             {/* <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' /> */}
             {/* <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' /> */}
             {/* <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' /> */}

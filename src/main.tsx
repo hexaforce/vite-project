@@ -22,6 +22,7 @@ const App = () => (
       <MenuLayout path='/Album2'>
         <Album />
       </MenuLayout>
+      <Pricing path='/Pricing' />
       <MenuLayout path='/Pricing2'>
         <Pricing />
       </MenuLayout>
