@@ -1,4 +1,5 @@
 import { h } from 'preact'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -12,19 +13,22 @@ import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
+import { Text } from '@codemirror/state'
 import Copyright from '@/contents/component/Copyright'
+import Codemirror from '@/contents/component/SpeechCodemirror/Codemirror'
 
 const theme = createTheme()
 
 export default function Write(props: any) {
-  // const handleSubmit = (event: any) => {
-  //   event.preventDefault()
-  //   const data = new FormData(event.currentTarget)
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   })
-  // }
+  const [doc, setDoc] = useState<Text>()
+  useEffect(() => {
+    if (doc && doc.length > 0) {
+      const text = doc.toJSON().join('\n')
+      console.log(text)
+    }
+  }, [doc])
+  const [mic, setMic] = useState(false)
+  const [addText, setAddText] = useState('')
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,7 +42,7 @@ export default function Write(props: any) {
             alignItems: 'center',
           }}
         >
-
+          <Codemirror doc={doc} setDoc={setDoc} mic={mic} setMic={setMic} addText={addText} setAddText={setAddText} editorFixHeight={320} />
         </Box>
       </Container>
     </ThemeProvider>

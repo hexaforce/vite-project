@@ -9,18 +9,29 @@
     "preview": "react-app-rewired & vite preview"
   },
   "dependencies": {
+    "@codemirror/basic-setup": "latest",
+    "@codemirror/commands": "latest",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
+    "@mui/lab": "latest",
     "@mui/material": "latest",
+    "aws-amplify": "latest",
+    "notistack": "latest",
     "preact": "latest",
     "preact-router": "latest",
     "react-scripts": "latest",
-    "recharts": "latest"
+    "react-swipeable-views": "^0.14.0",
+    "recharts": "latest",
+    "redux-debounced": "latest",
+    "redux-devtools-extension": "latest",
+    "redux-thunk": "latest",
+    "siriwave": "latest"
   },
   "devDependencies": {
     "@preact/preset-vite": "latest",
     "@trivago/prettier-plugin-sort-imports": "latest",
+    "@types/react-swipeable-views": "^0.13.1",
     "customize-cra": "latest",
     "prettier": "latest",
     "react-app-rewired": "latest",

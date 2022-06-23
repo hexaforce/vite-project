@@ -4,6 +4,8 @@ import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import Badge from '@mui/material/Badge'
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Chip from '@mui/material/Chip'
 import Container from '@mui/material/Container'
 import CssBaseline from '@mui/material/CssBaseline'
 import Divider from '@mui/material/Divider'
@@ -14,26 +16,24 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ListSubheader from '@mui/material/ListSubheader'
-import Toolbar from '@mui/material/Toolbar'
-import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
-import Chip from '@mui/material/Chip'
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles'
 import AssignmentIcon from '@mui/icons-material/Assignment'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import DashboardIcon from '@mui/icons-material/Dashboard'
+import EditIcon from '@mui/icons-material/Edit'
 import LayersIcon from '@mui/icons-material/Layers'
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
 import MenuIcon from '@mui/icons-material/Menu'
-import PostAddIcon from '@mui/icons-material/PostAdd';
-import EditIcon from '@mui/icons-material/Edit';
-import PsychologyIcon from '@mui/icons-material/Psychology';
 import PeopleIcon from '@mui/icons-material/People'
+import PostAddIcon from '@mui/icons-material/PostAdd'
+import PsychologyIcon from '@mui/icons-material/Psychology'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Copyright from '@/contents/component/Copyright'
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 const drawerWidth: number = 240
 
@@ -103,7 +103,7 @@ function MenuLinkPro(props: any) {
     <ListItemButton href={href} sx={{ height: 50 }}>
       <ListItemIcon>{icon}</ListItemIcon>
       <ListItemText primary={text} />
-      <Chip sx={{ mt: 6 }} label="Pro Plan" color="primary" variant="outlined" size="small" />
+      <Chip sx={{ mt: 6 }} label='Pro Plan' color='primary' variant='outlined' size='small' />
     </ListItemButton>
   )
 }
@@ -146,11 +146,11 @@ export default function App({ children, path }: { children: JSX.Element; path: s
               </Badge>
             </IconButton>
             */}
-            <Stack direction="row" spacing={2}>
-              <Button variant="contained" color="secondary" href="/SignIn">
+            <Stack direction='row' spacing={2}>
+              <Button variant='contained' color='secondary' href='/SignIn'>
                 ログイン
               </Button>
-              <Button variant="outlined" color="inherit" href="/SignUp">
+              <Button variant='outlined' color='inherit' href='/SignUp'>
                 新規登録
               </Button>
             </Stack>

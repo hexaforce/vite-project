@@ -2,19 +2,18 @@ import { Component, h, render } from 'preact'
 import { Router, route } from 'preact-router'
 import MenuLayout from '@/MenuLayout'
 import Album from '@/contents/Album'
+import ArticleList from '@/contents/ArticleList'
 import Pricing from '@/contents/Pricing'
 import SignIn from '@/contents/SignIn'
 import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
-import ArticleList from '@/contents/ArticleList'
+import ThemeSelectio from '@/contents/ThemeSelectio'
 import Write from '@/contents/Write'
 import Content from '@/contents/dashboard/DashboardContent'
-import ThemeSelectio from '@/contents/ThemeSelectio'
 
 /** Stateless app */
 const Main = () => {
-
   const isAuthenticated = async () => {
     return true
   }
@@ -22,9 +21,9 @@ const Main = () => {
   const handleRoute = async (e: any) => {
     switch (e.url) {
       case '/profile':
-        const isAuthed = await isAuthenticated();
-        if (!isAuthed) route('/', true);
-        break;
+        const isAuthed = await isAuthenticated()
+        if (!isAuthed) route('/', true)
+        break
     }
   }
 

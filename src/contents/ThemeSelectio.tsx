@@ -1,17 +1,15 @@
 import { h } from 'preact'
-import Grid from '@mui/material/Grid'
-import Paper from '@mui/material/Paper'
+import { route } from 'preact-router'
 import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
-
+import Grid from '@mui/material/Grid'
 import Link from '@mui/material/Link'
-import { route } from 'preact-router';
+import Paper from '@mui/material/Paper'
+import TextField from '@mui/material/TextField'
 
 export default function ThemeSelectio() {
-
   const handleSubmit = (event: any) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
@@ -19,7 +17,7 @@ export default function ThemeSelectio() {
       email: data.get('email'),
       password: data.get('password'),
     })
-    route('/Write', true);
+    route('/Write', true)
   }
 
   return (
@@ -65,15 +63,11 @@ export default function ThemeSelectio() {
             flexDirection: 'column',
             height: 240,
           }}
-        >
-
-        </Paper>
+        ></Paper>
       </Grid>
       {/* Recent Orders */}
       <Grid item xs={12}>
-        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-
-        </Paper>
+        <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}></Paper>
       </Grid>
     </Grid>
   )
