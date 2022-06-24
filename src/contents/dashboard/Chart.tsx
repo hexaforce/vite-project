@@ -1,7 +1,7 @@
-import Title from '@/contents/component/Title'
 import { Label, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts'
 import { Fragment, h } from 'preact'
 import { useTheme } from '@mui/material/styles'
+import Title from '@/contents/component/Title'
 
 // Generate Sales Data
 function createData(time: string, amount?: number) {

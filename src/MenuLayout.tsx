@@ -123,7 +123,7 @@ export default function App({ children, path }: { children: JSX.Element; path: s
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
-              flexWrap: 'wrap'
+              flexWrap: 'wrap',
             }}
           >
             <IconButton

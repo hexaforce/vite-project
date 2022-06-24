@@ -1,7 +1,7 @@
-import Title from '@/contents/component/Title'
 import { Fragment, h } from 'preact'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
+import Title from '@/contents/component/Title'
 
 function preventDefault(event: any) {
   event.preventDefault()

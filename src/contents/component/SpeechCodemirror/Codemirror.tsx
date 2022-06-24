@@ -100,7 +100,7 @@ export default function Codemirror(props: any) {
   }, [addText])
 
   return (
-    <Stack spacing={1} >
+    <Stack spacing={1}>
       <Box sx={{ width: 600, height: editorFixHeight + 2, transform: 'translateZ(0px)', flexGrow: 1 }}>
         <div ref={divRef} />
         <Avatar sx={{ position: 'absolute', bottom: 20, right: 20, width: 56, height: 56, bgcolor: mic ? 'red' : 'dodgerblue' }} onClick={handleMic}>
