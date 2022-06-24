@@ -14,6 +14,7 @@ import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import Title from '@/contents/component/Title'
+import Container from '@mui/material/Container'
 
 export default function ThemeSelectio() {
   const handleSubmit = (event: any) => {
@@ -32,81 +33,83 @@ export default function ThemeSelectio() {
   }
 
   return (
-    <Box component='form' onSubmit={handleSubmit}>
-      <Paper sx={{ p: 2 }}>
-        <Title>記事についての内容を決定</Title>
+    <Container sx={{ py: 2 }} maxWidth='md'>
+      <Box component='form' onSubmit={handleSubmit}>
+        <Paper sx={{ p: 2 }}>
+          <Title>記事についての内容を決定</Title>
 
-        <Grid container spacing={3}>
-          <Grid mt={3} item xs={12}>
-            <Typography>1.記事のテーマを選択</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField fullWidth variant='standard' select id='ArticleTheme' name='ArticleTheme' required autoFocus>
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
+          <Grid container spacing={3}>
+            <Grid mt={3} item xs={12}>
+              <Typography>1.記事のテーマを選択</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField fullWidth variant='standard' select id='ArticleTheme' name='ArticleTheme' required autoFocus>
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
 
-          <Grid mt={3} item xs={12}>
-            <Typography>2.記事についての詳細を選択</Typography>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth variant='standard' select id='ArticleGenre' name='ArticleGenre'>
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth variant='standard' select id='ArticleDetail' name='ArticleDetail'>
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth variant='standard' select id='ArticleEmotions' name='ArticleEmotions'>
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField fullWidth variant='standard' select id='ArticleStory' name='ArticleStory'>
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-          </Grid>
+            <Grid mt={3} item xs={12}>
+              <Typography>2.記事についての詳細を選択</Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth variant='standard' select id='ArticleGenre' name='ArticleGenre'>
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth variant='standard' select id='ArticleDetail' name='ArticleDetail'>
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth variant='standard' select id='ArticleEmotions' name='ArticleEmotions'>
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField fullWidth variant='standard' select id='ArticleStory' name='ArticleStory'>
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </Grid>
 
-          <Grid mt={3} item xs={12}>
-            <Typography>3.記事のタイトルを入力</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <TextField fullWidth variant='standard' id='ArticleTitle' name='ArticleTitle' required />
-          </Grid>
+            <Grid mt={3} item xs={12}>
+              <Typography>3.記事のタイトルを入力</Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <TextField fullWidth variant='standard' id='ArticleTitle' name='ArticleTitle' required />
+            </Grid>
 
-          <Grid m={3} item xs={12}>
-            <Stack direction='row' justifyContent='flex-end' alignItems='center'>
-              <Button type='submit' variant='contained'>
-                作成する
-              </Button>
-            </Stack>
+            <Grid m={3} item xs={12}>
+              <Stack direction='row' justifyContent='flex-end' alignItems='center'>
+                <Button type='submit' variant='contained'>
+                  作成する
+                </Button>
+              </Stack>
+            </Grid>
           </Grid>
-        </Grid>
-      </Paper>
-    </Box>
+        </Paper>
+      </Box>
+    </Container>
   )
 }
 
