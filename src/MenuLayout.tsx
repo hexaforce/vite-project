@@ -118,10 +118,12 @@ export default function App({ children, path }: { children: JSX.Element; path: s
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position='absolute' open={open}>
+
+        <AppBar position='absolute' open={open} elevation={0} sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}>
           <Toolbar
             sx={{
               pr: '24px', // keep right padding when drawer closed
+              flexWrap: 'wrap'
             }}
           >
             <IconButton
@@ -139,23 +141,18 @@ export default function App({ children, path }: { children: JSX.Element; path: s
             <Typography component='h1' variant='h6' color='inherit' noWrap sx={{ flexGrow: 1 }}>
               AIエディタ
             </Typography>
-            {/* 
-            <IconButton color='inherit'>
-              <Badge badgeContent={4} color='secondary'>
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            */}
-            <Stack direction='row' spacing={2}>
-              <Button variant='contained' color='secondary' href='/SignIn'>
+
+            <Stack direction='row' spacing={2} sx={{ my: 1, typography: 'subtitle2' }}>
+              <Button elevation={0} size='small' variant='contained' color='success' href='/SignIn'>
                 ログイン
               </Button>
-              <Button variant='outlined' color='inherit' href='/SignUp'>
+              <Button elevation={0} size='small' variant='outlined' color='inherit' href='/SignUp'>
                 新規登録
               </Button>
             </Stack>
           </Toolbar>
         </AppBar>
+
         <Drawer variant='permanent' open={open}>
           <Toolbar
             sx={{

@@ -1,4 +1,4 @@
-import Title from './Title'
+import Title from '@/contents/component/Title'
 import { Fragment, h } from 'preact'
 import Link from '@mui/material/Link'
 import Typography from '@mui/material/Typography'

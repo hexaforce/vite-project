@@ -8,7 +8,7 @@ import SignIn from '@/contents/SignIn'
 import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
-import ThemeSelectio from '@/contents/ThemeSelectio'
+import ThemeSelectio from '@/contents/ArticleTheme'
 import Write from '@/contents/Write'
 import Content from '@/contents/dashboard/DashboardContent'
 

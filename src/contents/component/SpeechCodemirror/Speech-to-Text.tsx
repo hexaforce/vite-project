@@ -86,11 +86,3 @@ export default function SpeechToText(props: any) {
     </Stack>
   )
 }
-
-// const SettingSwitch = (props: any) => {
-//   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-//     console.log(event.target.checked)
-//     props.setChecked(event.target.checked)
-//   }
-//   return <FormControlLabel label={props.label} control={<Switch checked={props.checked} onChange={handleChange} />} />
-// }
