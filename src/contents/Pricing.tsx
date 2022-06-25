@@ -20,22 +20,25 @@ const tiers = [
   {
     title: 'Free',
     price: '0',
-    description: ['10 users included', '2 GB of storage', 'Help center access', 'Email support'],
-    buttonText: 'Sign up for free',
+    per: '/月',
+    description: ['作成記事 10', 'タイトル案作成AI', 'メールによるサポート', '　', '　'],
+    buttonText: '無料でお申し込みいただけます',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
-    description: ['20 users included', '10 GB of storage', 'Help center access', 'Priority email support'],
-    buttonText: 'Get started',
+    title: 'Pro(monthly)',
+    price: '1500',
+    per: '/月',
+    description: ['作成記事 無制限', 'タイトル案作成AI', 'AIによる記事案作成', 'AIモデル調整機能', 'コールセンターサポート'],
+    buttonText: '始めましょう',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
-    description: ['50 users included', '30 GB of storage', 'Help center access', 'Phone & email support'],
+    title: 'Pro(yearly)',
+    subheader: '¥1200/月',
+    price: '14400',
+    per: '/年',
+    description: ['作成記事 無制限', 'タイトル案作成AI', 'AIによる記事案作成', 'AIモデル調整機能', 'コールセンターサポート'],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
   },
@@ -123,10 +126,10 @@ function PricingContent() {
                     }}
                   >
                     <Typography component='h2' variant='h3' color='text.primary'>
-                      ${tier.price}
+                      ¥{tier.price}
                     </Typography>
                     <Typography variant='h6' color='text.secondary'>
-                      /mo
+                      {tier.per}
                     </Typography>
                   </Box>
                   <ul>

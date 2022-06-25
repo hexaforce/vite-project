@@ -1,6 +1,5 @@
 import { Component, h, render } from 'preact'
 import { Router, route } from 'preact-router'
-import MenuLayout from '@/layout/MenuLayout'
 import Album from '@/contents/Album'
 import ArticleList from '@/contents/ArticleList'
 import ThemeSelectio from '@/contents/ArticleTheme'
@@ -10,16 +9,16 @@ import SignInSide from '@/contents/SignInSide'
 import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
 import Write from '@/contents/Write'
-import Content from '@/contents/dashboard/DashboardContent'
 import AiSupport from '@/contents/ai-support/AiSupport'
-import UiPreference from '@/contents/ui-preference/UiPreference'
 import Checkout from '@/contents/checkout/Checkout'
-
+import Content from '@/contents/dashboard/DashboardContent'
+import UiPreference from '@/contents/ui-preference/UiPreference'
+import MenuLayout from '@/layout/MenuLayout'
 import ArticleQuestion from '@/management/ArticleQuestion'
 import ArticleTheme from '@/management/ArticleTheme'
+import Maintenance from '@/management/Maintenance'
 import SystemSetting from '@/management/SystemSetting'
 import UserManage from '@/management/UserManage'
-import Maintenance from '@/management/Maintenance'
 
 // -rw-r--r--  1 hexaforce  staff  1375  6 25 14:54 ArticleQuestion.tsx
 // -rw-r--r--  1 hexaforce  staff  1372  6 25 14:52 ArticleTheme.tsx
@@ -44,7 +43,6 @@ const Main = () => {
 
   return (
     <Router onChange={handleRoute}>
-
       {/* 新しい記事 */}
       <MenuLayout path='/ThemeSelectio'>
         <ThemeSelectio />

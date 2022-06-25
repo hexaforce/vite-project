@@ -11,20 +11,21 @@ import ListItemText from '@mui/material/ListItemText'
 import ListSubheader from '@mui/material/ListSubheader'
 import Toolbar from '@mui/material/Toolbar'
 import { styled } from '@mui/material/styles'
+import AssignmentIcon from '@mui/icons-material/Assignment'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import DashboardIcon from '@mui/icons-material/Dashboard'
+import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered'
+import GroupsIcon from '@mui/icons-material/Groups'
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
+import ManageHistoryIcon from '@mui/icons-material/ManageHistory'
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices'
+import PaymentIcon from '@mui/icons-material/Payment'
 import PostAddIcon from '@mui/icons-material/PostAdd'
 import PsychologyIcon from '@mui/icons-material/Psychology'
-import GroupsIcon from '@mui/icons-material/Groups';
-import SettingsIcon from '@mui/icons-material/Settings';
-import StorageIcon from '@mui/icons-material/Storage';
-import QuizIcon from '@mui/icons-material/Quiz';
-import AssignmentIcon from '@mui/icons-material/Assignment';
-import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
-import ManageHistoryIcon from '@mui/icons-material/ManageHistory';
-import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
+import QuizIcon from '@mui/icons-material/Quiz'
+import SettingsIcon from '@mui/icons-material/Settings'
+import StorageIcon from '@mui/icons-material/Storage'
 
 const drawerWidth: number = 240
 
@@ -101,7 +102,7 @@ export default function DrawerMenu(props: any) {
         <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/UiPreference' />
 
         {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
-        {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
+        <MenuLink icon={<PaymentIcon />} text='Pricing' href='/Pricing' />
         {/* <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' /> */}
         {/* <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' /> */}
         {/* <MenuLink icon={<PeopleIcon />} text='コンテンツ' href='/Content' /> */}
@@ -119,7 +120,6 @@ export default function DrawerMenu(props: any) {
         <MenuLink icon={<MiscellaneousServicesIcon />} text='システム設定' href='/management/SystemSetting' />
         <MenuLink icon={<GroupsIcon />} text='ユーザ管理' href='/management/UserManage' />
         <MenuLink icon={<ManageHistoryIcon />} text='メンテナンス' href='/management/Maintenance' />
-
       </List>
     </Drawer>
   )

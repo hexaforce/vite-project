@@ -1,3 +1,5 @@
+import DrawerMenu from './DrawerMenu'
+import HeadAppBar from './HeadAppBar'
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
 import Box from '@mui/material/Box'
@@ -6,10 +8,6 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Toolbar from '@mui/material/Toolbar'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import Copyright from '@/contents/component/Copyright'
-
-
-import HeadAppBar from './HeadAppBar'
-import DrawerMenu from './DrawerMenu'
 
 const mdTheme = createTheme()
 
