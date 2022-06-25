@@ -11,7 +11,6 @@ import StickyFooter from '@/contents/StickyFooter'
 import Write from '@/contents/Write'
 import AiSupport from '@/contents/ai-support/AiSupport'
 import Checkout from '@/contents/checkout/Checkout'
-import Content from '@/contents/dashboard/DashboardContent'
 import UiPreference from '@/contents/ui-preference/UiPreference'
 import MenuLayout from '@/layout/MenuLayout'
 import ArticleQuestion from '@/management/ArticleQuestion'
@@ -19,12 +18,6 @@ import ArticleTheme from '@/management/ArticleTheme'
 import Maintenance from '@/management/Maintenance'
 import SystemSetting from '@/management/SystemSetting'
 import UserManage from '@/management/UserManage'
-
-// -rw-r--r--  1 hexaforce  staff  1375  6 25 14:54 ArticleQuestion.tsx
-// -rw-r--r--  1 hexaforce  staff  1372  6 25 14:52 ArticleTheme.tsx
-// -rw-r--r--  1 hexaforce  staff  1371  6 25 14:58 Maintenance.tsx
-// -rw-r--r--  1 hexaforce  staff  1373  6 25 14:55 SystemSetting.tsx
-// -rw-r--r--  1 hexaforce  staff  1370  6 25 14:56 UserManage.tsx
 
 /** Stateless app */
 const Main = () => {
