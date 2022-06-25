@@ -98,7 +98,7 @@ export default function DrawerMenu(props: any) {
       <List component='nav'>
         <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/ThemeSelectio' />
         <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
-        <MenuLinkPro icon={<PsychologyIcon />} text='AIサポート機能' href='/AiSupport' />
+        <MenuLinkPro icon={<PsychologyIcon />} text='AIアドバイス機能' href='/AiSupport' />
         <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/UiPreference' />
 
         {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
