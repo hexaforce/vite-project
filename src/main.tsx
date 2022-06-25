@@ -1,6 +1,6 @@
 import { Component, h, render } from 'preact'
 import { Router, route } from 'preact-router'
-import MenuLayout from '@/MenuLayout'
+import MenuLayout from '@/layout/MenuLayout'
 import Album from '@/contents/Album'
 import ArticleList from '@/contents/ArticleList'
 import ThemeSelectio from '@/contents/ArticleTheme'
