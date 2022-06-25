@@ -26,7 +26,7 @@ const tiers = [
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro(monthly)',
+    title: 'Pro(毎月)',
     price: '1500',
     per: '/月',
     description: ['作成記事 無制限', 'タイトル案作成AI', 'AIによる記事案作成', 'AIモデル調整機能', 'コールセンターサポート'],
@@ -34,7 +34,7 @@ const tiers = [
     buttonVariant: 'contained',
   },
   {
-    title: 'Pro(yearly)',
+    title: 'Pro(毎年)',
     subheader: '¥1200/月',
     price: '14400',
     per: '/年',
