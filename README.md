@@ -4,6 +4,8 @@
 * [Vitejs](https://ja.vitejs.dev/guide/)
 * [Preact](https://preactjs.com/tutorial/01-vdom)
 * [MaterialUI](https://mui.com/material-ui/getting-started/overview/)  
+* [CodeMirror](https://codemirror.net/docs/ref/)  
+* [SpeechRecognition](https://developer.mozilla.org/ja/docs/Web/API/SpeechRecognition)  
 * [Pnpm](https://pnpm.io/pnpm-cli)
 
 ```bash

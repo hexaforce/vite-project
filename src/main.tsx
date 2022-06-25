@@ -11,6 +11,8 @@ import SignUp from '@/contents/SignUp'
 import StickyFooter from '@/contents/StickyFooter'
 import Write from '@/contents/Write'
 import Content from '@/contents/dashboard/DashboardContent'
+import AiSupport from '@/contents/ai-support/AiSupport'
+import UiPreference from '@/contents/ui-preference/UiPreference'
 
 /** Stateless app */
 const Main = () => {
@@ -29,13 +31,30 @@ const Main = () => {
 
   return (
     <Router onChange={handleRoute}>
+
+      {/* 新しい記事 */}
       <MenuLayout path='/ThemeSelectio'>
         <ThemeSelectio />
       </MenuLayout>
+
+      {/* 作成した記事一覧 */}
       <MenuLayout path='/'>
         <ArticleList />
       </MenuLayout>
+
+      {/* CodeMirror */}
       <Write path='/Write' />
+
+      {/* AIサポート機能 */}
+      <MenuLayout path='/AiSupport'>
+        <AiSupport />
+      </MenuLayout>
+
+      {/* UI設定 */}
+      <MenuLayout path='/UiPreference'>
+        <UiPreference />
+      </MenuLayout>
+
       <MenuLayout path='/Album2'>
         <Album />
       </MenuLayout>

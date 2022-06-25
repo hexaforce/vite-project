@@ -47,12 +47,10 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 function MenuLink(props: any) {
   const { icon, text, href } = props
   return (
-    <Fragment>
-      <ListItemButton href={href}>
-        <ListItemIcon>{icon}</ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItemButton>
-    </Fragment>
+    <ListItemButton href={href}>
+      <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemText primary={text} />
+    </ListItemButton>
   )
 }
 
@@ -91,13 +89,13 @@ export default function DrawerMenu(props: any) {
       <List component='nav'>
         <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/ThemeSelectio' />
         <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
-        <MenuLinkPro icon={<PsychologyIcon />} text='AIサポート機能' href='/Pricing' />
-        <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/Content' />
+        <MenuLinkPro icon={<PsychologyIcon />} text='AIサポート機能' href='/AiSupport' />
+        <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/UiPreference' />
         {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
         {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
-        {/* <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' />
-      <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' />
-      <MenuLink icon={<PeopleIcon />} text='コンテンツ' href='/Content' /> */}
+        {/* <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' /> */}
+        {/* <MenuLink icon={<PeopleIcon />} text='Pricing2' href='/Pricing2' /> */}
+        {/* <MenuLink icon={<PeopleIcon />} text='コンテンツ' href='/Content' /> */}
         {/* <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' /> */}
         {/* <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' /> */}
         {/* <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' /> */}

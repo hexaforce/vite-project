@@ -1,10 +1,7 @@
-// import { MainListItems, SecondaryListItems } from './ListItems';
-import Chart from './Chart'
-import Deposits from './Deposits'
-import Orders from './Orders'
 import { h } from 'preact'
 import Grid from '@mui/material/Grid'
 import Paper from '@mui/material/Paper'
+import Typography from '@mui/material/Typography'
 
 // xs, extra-small: 0px
 // sm, small: 600px
@@ -12,7 +9,7 @@ import Paper from '@mui/material/Paper'
 // lg, large: 1200px
 // xl, extra-large: 1536px
 
-export default function DashboardContent() {
+export default function UiPreference() {
   return (
     <Grid container spacing={3}>
       {/* Chart */}
@@ -25,7 +22,9 @@ export default function DashboardContent() {
             height: 240,
           }}
         >
-          <Chart />
+          <Typography gutterBottom variant='h5' component='h2'>
+            Heading
+          </Typography>
         </Paper>
       </Grid>
       {/* Recent Deposits */}
@@ -38,13 +37,17 @@ export default function DashboardContent() {
             height: 240,
           }}
         >
-          <Deposits />
+          <Typography gutterBottom variant='h5' component='h2'>
+            Heading
+          </Typography>
         </Paper>
       </Grid>
       {/* Recent Orders */}
       <Grid item xs={12}>
         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-          <Orders />
+          <Typography gutterBottom variant='h5' component='h2'>
+            Heading
+          </Typography>
         </Paper>
       </Grid>
     </Grid>
