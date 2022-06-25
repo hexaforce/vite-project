@@ -17,6 +17,14 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts'
 import PostAddIcon from '@mui/icons-material/PostAdd'
 import PsychologyIcon from '@mui/icons-material/Psychology'
+import GroupsIcon from '@mui/icons-material/Groups';
+import SettingsIcon from '@mui/icons-material/Settings';
+import StorageIcon from '@mui/icons-material/Storage';
+import QuizIcon from '@mui/icons-material/Quiz';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import FormatListNumberedIcon from '@mui/icons-material/FormatListNumbered';
+import ManageHistoryIcon from '@mui/icons-material/ManageHistory';
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 
 const drawerWidth: number = 240
 
@@ -91,6 +99,7 @@ export default function DrawerMenu(props: any) {
         <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
         <MenuLinkPro icon={<PsychologyIcon />} text='AIサポート機能' href='/AiSupport' />
         <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/UiPreference' />
+
         {/* <MenuLink icon={<ShoppingCartIcon />} text='Album' href='/Album' /> */}
         {/* <MenuLink icon={<PeopleIcon />} text='Pricing' href='/Pricing' /> */}
         {/* <MenuLink icon={<ShoppingCartIcon />} text='Album2' href='/Album2' /> */}
@@ -99,11 +108,18 @@ export default function DrawerMenu(props: any) {
         {/* <MenuLink icon={<BarChartIcon />} text='SignIn' href='/SignIn' /> */}
         {/* <MenuLink icon={<LayersIcon />} text='SignInSide' href='/SignInSide' /> */}
         {/* <MenuLink icon={<AssignmentIcon />} text='SignUp' href='/SignUp' /> */}
+        {/* <MenuLink icon={<DashboardIcon />} text='StickyFooter' href='/StickyFooter' /> */}
+
         <Divider sx={{ my: 1 }} />
         <ListSubheader component='div' inset>
           管理者メニュー
         </ListSubheader>
-        <MenuLink icon={<DashboardIcon />} text='StickyFooter' href='/StickyFooter' />
+        <MenuLink icon={<FormatListNumberedIcon />} text='テーマの編集' href='/management/ArticleTheme' />
+        <MenuLink icon={<QuizIcon />} text='質問の編集' href='/management/ArticleQuestion' />
+        <MenuLink icon={<MiscellaneousServicesIcon />} text='システム設定' href='/management/SystemSetting' />
+        <MenuLink icon={<GroupsIcon />} text='ユーザ管理' href='/management/UserManage' />
+        <MenuLink icon={<ManageHistoryIcon />} text='メンテナンス' href='/management/Maintenance' />
+
       </List>
     </Drawer>
   )

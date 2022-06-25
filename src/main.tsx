@@ -13,6 +13,19 @@ import Write from '@/contents/Write'
 import Content from '@/contents/dashboard/DashboardContent'
 import AiSupport from '@/contents/ai-support/AiSupport'
 import UiPreference from '@/contents/ui-preference/UiPreference'
+import Checkout from '@/contents/checkout/Checkout'
+
+import ArticleQuestion from '@/management/ArticleQuestion'
+import ArticleTheme from '@/management/ArticleTheme'
+import SystemSetting from '@/management/SystemSetting'
+import UserManage from '@/management/UserManage'
+import Maintenance from '@/management/Maintenance'
+
+// -rw-r--r--  1 hexaforce  staff  1375  6 25 14:54 ArticleQuestion.tsx
+// -rw-r--r--  1 hexaforce  staff  1372  6 25 14:52 ArticleTheme.tsx
+// -rw-r--r--  1 hexaforce  staff  1371  6 25 14:58 Maintenance.tsx
+// -rw-r--r--  1 hexaforce  staff  1373  6 25 14:55 SystemSetting.tsx
+// -rw-r--r--  1 hexaforce  staff  1370  6 25 14:56 UserManage.tsx
 
 /** Stateless app */
 const Main = () => {
@@ -55,16 +68,25 @@ const Main = () => {
         <UiPreference />
       </MenuLayout>
 
-      <MenuLayout path='/Album2'>
-        <Album />
+      <MenuLayout path='/management/ArticleTheme'>
+        <ArticleTheme />
       </MenuLayout>
+      <MenuLayout path='/management/ArticleQuestion'>
+        <ArticleQuestion />
+      </MenuLayout>
+      <MenuLayout path='/management/SystemSetting'>
+        <SystemSetting />
+      </MenuLayout>
+      <MenuLayout path='/management/UserManage'>
+        <UserManage />
+      </MenuLayout>
+      <MenuLayout path='/management/Maintenance'>
+        <Maintenance />
+      </MenuLayout>
+
+      <Checkout path='/Checkout' />
+      <Album path='/Album' />
       <Pricing path='/Pricing' />
-      <MenuLayout path='/Pricing2'>
-        <Pricing />
-      </MenuLayout>
-      <MenuLayout path='/Content'>
-        <Content />
-      </MenuLayout>
       <SignIn path='/SignIn' />
       <SignInSide path='/SignInSide' />
       <SignUp path='/SignUp' />

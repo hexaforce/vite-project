@@ -27,7 +27,7 @@ function getStepContent(step: number) {
   }
 }
 
-export default function Checkout() {
+export default function Checkout(props: any) {
   const [activeStep, setActiveStep] = useState(0)
 
   const handleNext = () => {
