@@ -8,12 +8,10 @@ import MicIcon from '@mui/icons-material/Mic'
 import MicOffIcon from '@mui/icons-material/MicOff'
 import { cursorDocEnd, cursorLineDown, defaultKeymap } from '@codemirror/commands'
 import { EditorState, Text } from '@codemirror/state'
-import { EditorView, highlightActiveLine, keymap } from '@codemirror/view'
-import { placeholder } from '@codemirror/view'
+import { EditorView, highlightActiveLine, keymap, placeholder } from '@codemirror/view'
 
 export default function Codemirror(props: any) {
   const { mic, setMic, doc, setDoc, insertText, setInsertText, editorFixHeight } = props
-  //console.log("Codemirror initialize index:" + index + " swipeIndex:" + swipeIndex + "  " + new Date().getTime())
 
   const divRef = useRef<HTMLDivElement>(null)
   const editorViewRef = useRef<EditorView>()
@@ -38,9 +36,7 @@ export default function Codemirror(props: any) {
       highlightActiveLine(),
       updateListenerExtension(),
       EditorView.theme({
-        '&': {
-          maxHeight: editorFixHeight + 'px', // textAlign: 'left!important'
-        },
+        '&': { maxHeight: editorFixHeight + 'px' },
         '.cm-gutter,.cm-content': { minHeight: editorFixHeight + 'px' },
         '.cm-scroller': { overflow: 'auto', outline: '1px solid gainsboro' },
       }),
