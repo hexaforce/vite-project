@@ -9,8 +9,9 @@
     "preview": "react-app-rewired & vite preview"
   },
   "dependencies": {
-    "@codemirror/basic-setup": "latest",
     "@codemirror/commands": "latest",
+    "@codemirror/state": "latest",
+    "@codemirror/view": "latest",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",

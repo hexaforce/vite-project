@@ -28,7 +28,7 @@ export default function Write(props: any) {
     }
   }, [doc])
   const [mic, setMic] = useState(false)
-  const [addText, setAddText] = useState('')
+  const [insertText, setInsertText] = useState('')
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,7 +42,7 @@ export default function Write(props: any) {
             alignItems: 'center',
           }}
         >
-          <Codemirror doc={doc} setDoc={setDoc} mic={mic} setMic={setMic} addText={addText} setAddText={setAddText} editorFixHeight={320} />
+          <Codemirror doc={doc} setDoc={setDoc} mic={mic} setMic={setMic} insertText={insertText} setInsertText={setInsertText} editorFixHeight={320} />
         </Box>
       </Container>
     </ThemeProvider>

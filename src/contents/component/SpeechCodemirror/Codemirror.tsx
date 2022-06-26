@@ -6,20 +6,17 @@ import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import MicIcon from '@mui/icons-material/Mic'
 import MicOffIcon from '@mui/icons-material/MicOff'
-import { basicSetup } from '@codemirror/basic-setup'
 import { cursorDocEnd, cursorLineDown, defaultKeymap } from '@codemirror/commands'
 import { EditorState, Text } from '@codemirror/state'
 import { EditorView, highlightActiveLine, keymap } from '@codemirror/view'
 import { placeholder } from '@codemirror/view'
 
 export default function Codemirror(props: any) {
-  const { mic, setMic, doc, setDoc, addText, setAddText, editorFixHeight } = props
+  const { mic, setMic, doc, setDoc, insertText, setInsertText, editorFixHeight } = props
   //console.log("Codemirror initialize index:" + index + " swipeIndex:" + swipeIndex + "  " + new Date().getTime())
 
   const divRef = useRef<HTMLDivElement>(null)
   const editorViewRef = useRef<EditorView>()
-
-  const [recognitionText, setRecognitionText] = useState('')
 
   const handleMic = () => {
     setMic(!mic)
@@ -37,8 +34,7 @@ export default function Codemirror(props: any) {
   const editorState = EditorState.create({
     doc: '', //index == swipeIndex && conversation.currentArticle.answer.length > index ? conversation.currentArticle.answer[index] : '',
     extensions: [
-      // basicSetup,
-      // keymap.of(defaultKeymap),
+      keymap.of(defaultKeymap),
       highlightActiveLine(),
       updateListenerExtension(),
       EditorView.theme({
@@ -58,7 +54,7 @@ export default function Codemirror(props: any) {
         state: editorState,
         parent: divRef.current,
       })
-      // cursorDocEnd(editorView)
+      cursorDocEnd(editorView)
       editorView.focus()
       editorViewRef.current = editorView
       return () => {
@@ -68,36 +64,21 @@ export default function Codemirror(props: any) {
   }, [])
 
   useEffect(() => {
-    if (recognitionText != '') {
+    if (insertText != '') {
       if (editorViewRef.current) {
+        editorViewRef.current.focus()
         const transaction = editorViewRef.current.state.update({
           changes: {
             from: editorViewRef.current.state.selection.ranges[0].to,
-            insert: recognitionText,
+            insert: insertText,
           },
         })
         editorViewRef.current.dispatch(transaction)
-        // cursorLineDown(editorViewRef.current)
+        cursorLineDown(editorViewRef.current)
       }
-      setRecognitionText('')
+      setInsertText('')
     }
-  }, [recognitionText])
-
-  useEffect(() => {
-    if (addText != '') {
-      if (editorViewRef.current) {
-        const transaction = editorViewRef.current.state.update({
-          changes: {
-            from: editorViewRef.current.state.selection.ranges[0].to,
-            insert: addText,
-          },
-        })
-        editorViewRef.current.dispatch(transaction)
-        // cursorLineDown(editorViewRef.current)
-      }
-      setAddText('')
-    }
-  }, [addText])
+  }, [insertText])
 
   return (
     <Stack spacing={1}>
@@ -108,7 +89,7 @@ export default function Codemirror(props: any) {
         </Avatar>
       </Box>
       {doc && doc.length}文字
-      <SpeechToText mic={mic} setRecognitionText={setRecognitionText} />
+      <SpeechToText mic={mic} setRecognitionText={setInsertText} />
     </Stack>
   )
 }
