@@ -10,6 +10,11 @@
       "StackName": "amplify-hexaforce-dev-174923",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:412883365174:stack/amplify-hexaforce-dev-174923/5ff85b20-00f6-11ed-8a3b-0edb40ac7beb",
       "AmplifyAppId": "d3kpq6lr6rbvg6"
+    },
+    "categories": {
+      "auth": {
+        "hexaforcef43bad27": {}
+      }
     }
   }
 }
