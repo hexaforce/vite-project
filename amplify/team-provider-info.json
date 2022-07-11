@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hexaforce-dev-174923-authRole",
+      "UnauthRoleArn": "arn:aws:iam::412883365174:role/amplify-hexaforce-dev-174923-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::412883365174:role/amplify-hexaforce-dev-174923-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-hexaforce-dev-174923-deployment",
+      "UnauthRoleName": "amplify-hexaforce-dev-174923-unauthRole",
+      "StackName": "amplify-hexaforce-dev-174923",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:412883365174:stack/amplify-hexaforce-dev-174923/5ff85b20-00f6-11ed-8a3b-0edb40ac7beb",
+      "AmplifyAppId": "d3kpq6lr6rbvg6"
+    }
+  }
+}
