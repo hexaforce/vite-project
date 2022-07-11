@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "hexaforcef43bad27": {}
+        "hexaforcef43bad27": {},
+        "userPoolGroups": {}
       }
     }
   }
