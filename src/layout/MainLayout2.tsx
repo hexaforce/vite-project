@@ -1,18 +1,21 @@
 import { Component, Fragment, h } from 'preact'
 import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import CssBaseline from '@mui/material/CssBaseline'
-import Divider from '@mui/material/Divider'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import { styled, useTheme } from '@mui/material/styles'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import MenuIcon from '@mui/icons-material/Menu'
+import {
+  Box,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  Toolbar,
+  Typography
+} from '@mui/material'
+import { styled, ThemeProvider, createTheme, useTheme } from '@mui/material/styles'
+import {
+  ChevronLeft,
+  ChevronRight,
+  Menu
+} from '@mui/icons-material'
 import MenuList from '@/layout/MenuList'
 
 const mdTheme = createTheme()
@@ -38,7 +41,7 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
         <AppBar position='fixed' open={open}>
           <Toolbar>
             <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerOpen} edge='start' sx={{ mr: 2, ...(open && { display: 'none' }) }}>
-              <MenuIcon />
+              <Menu />
             </IconButton>
             <Typography variant='h6' noWrap component='div'>
               AIエディタ
@@ -60,7 +63,7 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
           }}
         >
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
+            <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}</IconButton>
           </DrawerHeader>
           <Divider />
           <MenuList />

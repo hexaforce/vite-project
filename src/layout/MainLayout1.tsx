@@ -1,19 +1,23 @@
 import { Component, Fragment, h } from 'preact'
 import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
-import Badge from '@mui/material/Badge'
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
-import CssBaseline from '@mui/material/CssBaseline'
-import Divider from '@mui/material/Divider'
 import MuiDrawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
+import {
+  Badge,
+  Container,
+  Box,
+  CssBaseline,
+  Divider,
+  IconButton,
+  Toolbar,
+  Typography
+} from '@mui/material'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import MenuIcon from '@mui/icons-material/Menu'
-import NotificationsIcon from '@mui/icons-material/Notifications'
+import {
+  ChevronLeft,
+  Menu,
+  Notifications
+} from '@mui/icons-material'
 import MenuList from '@/layout/MenuList'
 
 const mdTheme = createTheme()
@@ -46,14 +50,14 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
                 ...(open && { display: 'none' }),
               }}
             >
-              <MenuIcon />
+              <Menu />
             </IconButton>
             <Typography component='h1' variant='h6' color='inherit' noWrap sx={{ flexGrow: 1 }}>
               AIエディタ
             </Typography>
             <IconButton color='inherit'>
               <Badge badgeContent={4} color='secondary'>
-                <NotificationsIcon />
+                <Notifications />
               </Badge>
             </IconButton>
           </Toolbar>
@@ -69,7 +73,7 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
             }}
           >
             <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+              <ChevronLeft />
             </IconButton>
           </Toolbar>
           <Divider />
