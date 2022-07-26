@@ -1,22 +1,79 @@
-import { h, Fragment, Component } from 'preact'
+import { ChevronLeft, ChevronRight, Menu } from '@mui/icons-material'
+import { Box, CssBaseline, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material'
+import { Component, Fragment, h } from 'preact'
 import { useState } from 'preact/hooks'
-import { styled, useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import DrawerMenu from './SideDrawer2'
-import HeadAppBar from './HeadAppBar2'
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
+import { ThemeProvider, createTheme, styled, useTheme } from '@mui/material/styles'
+import MenuList from '@/layout/MenuList'
 
-// const drawerWidth = 240;
+const mdTheme = createTheme()
+const drawerWidth = 240
 
-const Main = styled(Fragment, { shouldForwardProp: (prop) => prop !== 'open' })<{ open?: boolean; }>(({ theme, open }) => ({
+export default ({ children, path }: { children: JSX.Element; path: string }) => {
+  const theme = useTheme()
+  const [open, setOpen] = useState(false)
+
+  const handleDrawerOpen = () => {
+    setOpen(true)
+  }
+
+  const handleDrawerClose = () => {
+    setOpen(false)
+  }
+
+  return (
+    <ThemeProvider theme={mdTheme}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+
+        <AppBar position='fixed' open={open}>
+          <Toolbar>
+            <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerOpen} edge='start' sx={{ mr: 2, ...(open && { display: 'none' }) }}>
+              <Menu />
+            </IconButton>
+            <Typography variant='h6' noWrap component='div'>
+              AIエディタ
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        <Drawer
+          variant='persistent'
+          anchor='left'
+          open={open}
+          sx={{
+            // width: drawerWidth,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+              boxSizing: 'border-box',
+            },
+          }}
+        >
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeft /> : <ChevronRight />}</IconButton>
+          </DrawerHeader>
+          <Divider />
+          <MenuList />
+        </Drawer>
+
+        <Main open={open}>
+          <DrawerHeader />
+          {children}
+        </Main>
+      </Box>
+    </ThemeProvider>
+  )
+}
+
+const Main = styled(Fragment, { shouldForwardProp: (prop) => prop !== 'open' })<{ open?: boolean }>(({ theme, open }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  // marginLeft: `-${drawerWidth}px`,
+  marginLeft: `-${drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
@@ -24,8 +81,26 @@ const Main = styled(Fragment, { shouldForwardProp: (prop) => prop !== 'open' })<
     }),
     marginLeft: 0,
   }),
-}));
+}))
 
+interface AppBarProps extends MuiAppBarProps {
+  open?: boolean
+}
+
+const AppBar = styled(MuiAppBar, { shouldForwardProp: (prop) => prop !== 'open' })<AppBarProps>(({ theme, open }) => ({
+  transition: theme.transitions.create(['margin', 'width'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  ...(open && {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: `${drawerWidth}px`,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  }),
+}))
 
 const DrawerHeader = styled(Fragment)(({ theme }) => ({
   display: 'flex',
@@ -34,19 +109,4 @@ const DrawerHeader = styled(Fragment)(({ theme }) => ({
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
-}));
-
-export default ({ children, path }: { children: JSX.Element; path: string }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <HeadAppBar open={open} setOpen={setOpen} />
-      <DrawerMenu open={open} setOpen={setOpen} />
-      <Main open={open}>
-        {/* <DrawerHeader /> */}
-        {children}
-      </Main>
-    </Box>
-  );
-}
+}))
