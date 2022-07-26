@@ -13,7 +13,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import MenuIcon from '@mui/icons-material/Menu'
 import MenuList from '@/layout/MenuList'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
 
+const mdTheme = createTheme()
 const drawerWidth = 240
 
 const Main = styled(Fragment, { shouldForwardProp: (prop) => prop !== 'open' })<{ open?: boolean }>(({ theme, open }) => ({
@@ -74,41 +76,43 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position='fixed' open={open}>
-        <Toolbar>
-          <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerOpen} edge='start' sx={{ mr: 2, ...(open && { display: 'none' }) }}>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h6' noWrap component='div'>
-            AIエディタ
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer
-        sx={{
-          // width: drawerWidth,
-          flexShrink: 0,
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-            boxSizing: 'border-box',
-          },
-        }}
-        variant='persistent'
-        anchor='left'
-        open={open}
-      >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
-        </DrawerHeader>
-        <Divider />
-        <MenuList />
-      </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-        {children}
-      </Main>
-    </Box>
+    <ThemeProvider theme={mdTheme}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar position='fixed' open={open}>
+          <Toolbar>
+            <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerOpen} edge='start' sx={{ mr: 2, ...(open && { display: 'none' }) }}>
+              <MenuIcon />
+            </IconButton>
+            <Typography variant='h6' noWrap component='div'>
+              AIエディタ
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          sx={{
+            // width: drawerWidth,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+              boxSizing: 'border-box',
+            },
+          }}
+          variant='persistent'
+          anchor='left'
+          open={open}
+        >
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
+          </DrawerHeader>
+          <Divider />
+          <MenuList />
+        </Drawer>
+        <Main open={open}>
+          <DrawerHeader />
+          {children}
+        </Main>
+      </Box>
+    </ThemeProvider>
   )
 }

@@ -12,12 +12,13 @@ import Write from '@/contents/Write'
 import AiSupport from '@/contents/ai-support/AiSupport'
 import Checkout from '@/contents/checkout/Checkout'
 import UiPreference from '@/contents/ui-preference/UiPreference'
-import MenuLayout from '@/layout/MainLayout2'
 import ArticleQuestion from '@/management/ArticleQuestion'
 import ArticleTheme from '@/management/ArticleTheme'
 import Maintenance from '@/management/Maintenance'
 import SystemSetting from '@/management/SystemSetting'
 import UserManage from '@/management/UserManage'
+
+import MenuLayout from '@/layout/MainLayout1'
 
 /** Stateless app */
 const Main = () => {
