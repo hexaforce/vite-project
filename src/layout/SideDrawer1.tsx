@@ -1,4 +1,4 @@
-import { h, Fragment, Component } from 'preact'
+import { Component, Fragment, h } from 'preact'
 import { useState } from 'preact/hooks'
 import Divider from '@mui/material/Divider'
 import MuiDrawer from '@mui/material/Drawer'

@@ -1,4 +1,4 @@
-import { h, Fragment, Component } from 'preact'
+import { Component, Fragment, h } from 'preact'
 import Chip from '@mui/material/Chip'
 import Divider from '@mui/material/Divider'
 import List from '@mui/material/List'
@@ -39,20 +39,22 @@ function MenuLinkPro(props: any) {
 }
 
 export default () => {
-  return <List component='nav'>
-    <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/ThemeSelectio' />
-    <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
-    <MenuLinkPro icon={<PsychologyIcon />} text='AIアドバイス機能' href='/AiSupport' />
-    <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/UiPreference' />
-    <MenuLink icon={<PaymentIcon />} text='Pricing' href='/Pricing' />
-    <Divider sx={{ my: 1 }} />
-    <ListSubheader component='div' inset>
-      管理者メニュー
-    </ListSubheader>
-    <MenuLink icon={<FormatListNumberedIcon />} text='テーマの編集' href='/management/ArticleTheme' />
-    <MenuLink icon={<QuizIcon />} text='質問の編集' href='/management/ArticleQuestion' />
-    <MenuLink icon={<MiscellaneousServicesIcon />} text='システム設定' href='/management/SystemSetting' />
-    <MenuLink icon={<GroupsIcon />} text='ユーザ管理' href='/management/UserManage' />
-    <MenuLink icon={<ManageHistoryIcon />} text='メンテナンス' href='/management/Maintenance' />
-  </List>
+  return (
+    <List component='nav'>
+      <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/ThemeSelectio' />
+      <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />
+      <MenuLinkPro icon={<PsychologyIcon />} text='AIアドバイス機能' href='/AiSupport' />
+      <MenuLink icon={<ManageAccountsIcon />} text='UI設定' href='/UiPreference' />
+      <MenuLink icon={<PaymentIcon />} text='Pricing' href='/Pricing' />
+      <Divider sx={{ my: 1 }} />
+      <ListSubheader component='div' inset>
+        管理者メニュー
+      </ListSubheader>
+      <MenuLink icon={<FormatListNumberedIcon />} text='テーマの編集' href='/management/ArticleTheme' />
+      <MenuLink icon={<QuizIcon />} text='質問の編集' href='/management/ArticleQuestion' />
+      <MenuLink icon={<MiscellaneousServicesIcon />} text='システム設定' href='/management/SystemSetting' />
+      <MenuLink icon={<GroupsIcon />} text='ユーザ管理' href='/management/UserManage' />
+      <MenuLink icon={<ManageHistoryIcon />} text='メンテナンス' href='/management/Maintenance' />
+    </List>
+  )
 }
