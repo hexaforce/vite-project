@@ -9,11 +9,11 @@ import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { styled, useTheme } from '@mui/material/styles'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import MenuIcon from '@mui/icons-material/Menu'
 import MenuList from '@/layout/MenuList'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 const mdTheme = createTheme()
 const drawerWidth = 240
@@ -46,7 +46,10 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
           </Toolbar>
         </AppBar>
 
-        <Drawer variant='persistent' anchor='left' open={open}
+        <Drawer
+          variant='persistent'
+          anchor='left'
+          open={open}
           sx={{
             // width: drawerWidth,
             flexShrink: 0,
@@ -54,7 +57,8 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
               width: drawerWidth,
               boxSizing: 'border-box',
             },
-          }}>
+          }}
+        >
           <DrawerHeader>
             <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
           </DrawerHeader>
@@ -66,7 +70,6 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
           <DrawerHeader />
           {children}
         </Main>
-
       </Box>
     </ThemeProvider>
   )

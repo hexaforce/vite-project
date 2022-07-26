@@ -1,5 +1,7 @@
 import { Component, h, render } from 'preact'
 import { Router, route } from 'preact-router'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import Album from '@/contents/Album'
 import ArticleList from '@/contents/ArticleList'
 import ThemeSelectio from '@/contents/ArticleTheme'
@@ -12,31 +14,22 @@ import Write from '@/contents/Write'
 import AiSupport from '@/contents/ai-support/AiSupport'
 import Checkout from '@/contents/checkout/Checkout'
 import UiPreference from '@/contents/ui-preference/UiPreference'
+import MainLayout1 from '@/layout/MainLayout1'
+import MainLayout2 from '@/layout/MainLayout2'
 import ArticleQuestion from '@/management/ArticleQuestion'
 import ArticleTheme from '@/management/ArticleTheme'
 import Maintenance from '@/management/Maintenance'
 import SystemSetting from '@/management/SystemSetting'
 import UserManage from '@/management/UserManage'
 
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-
-import MainLayout1 from '@/layout/MainLayout1'
-import MainLayout2 from '@/layout/MainLayout2'
-
-const MainLayout = ({ children, path, mdOnly }: { children: JSX.Element; path: string, mdOnly: boolean }) => {
-  return mdOnly ? <MainLayout1 path={path}>
-    {children}
-  </MainLayout1> : <MainLayout2 path={path}>
-    {children}
-  </MainLayout2>
-
+const MainLayout = ({ children, path, mdOnly }: { children: JSX.Element; path: string; mdOnly: boolean }) => {
+  return mdOnly ? <MainLayout1 path={path}>{children}</MainLayout1> : <MainLayout2 path={path}>{children}</MainLayout2>
 }
 
 /** Stateless app */
 const Main = () => {
-  const theme = useTheme();
-  const mdOnly = useMediaQuery(theme.breakpoints.up('md'));
+  const theme = useTheme()
+  const mdOnly = useMediaQuery(theme.breakpoints.up('md'))
 
   const isAuthenticated = async () => {
     return false
@@ -53,14 +46,13 @@ const Main = () => {
 
   return (
     <Router onChange={handleRoute}>
-
       {/* 新しい記事 */}
-      <MainLayout path='/ThemeSelectio' mdOnly={mdOnly} >
+      <MainLayout path='/ThemeSelectio' mdOnly={mdOnly}>
         <ThemeSelectio />
       </MainLayout>
 
       {/* 作成した記事一覧 */}
-      <MainLayout path='/' mdOnly={mdOnly} >
+      <MainLayout path='/' mdOnly={mdOnly}>
         <ArticleList />
       </MainLayout>
 
@@ -68,32 +60,32 @@ const Main = () => {
       <Write path='/Write' />
 
       {/* AIサポート機能 */}
-      <MainLayout path='/AiSupport' mdOnly={mdOnly} >
+      <MainLayout path='/AiSupport' mdOnly={mdOnly}>
         <AiSupport />
       </MainLayout>
 
       {/* UI設定 */}
-      <MainLayout path='/UiPreference' mdOnly={mdOnly} >
+      <MainLayout path='/UiPreference' mdOnly={mdOnly}>
         <UiPreference />
       </MainLayout>
 
-      <MainLayout path='/management/ArticleTheme' mdOnly={mdOnly} >
+      <MainLayout path='/management/ArticleTheme' mdOnly={mdOnly}>
         <ArticleTheme />
       </MainLayout>
 
-      <MainLayout path='/management/ArticleQuestion' mdOnly={mdOnly} >
+      <MainLayout path='/management/ArticleQuestion' mdOnly={mdOnly}>
         <ArticleQuestion />
       </MainLayout>
 
-      <MainLayout path='/management/SystemSetting' mdOnly={mdOnly} >
+      <MainLayout path='/management/SystemSetting' mdOnly={mdOnly}>
         <SystemSetting />
       </MainLayout>
 
-      <MainLayout path='/management/UserManage' mdOnly={mdOnly} >
+      <MainLayout path='/management/UserManage' mdOnly={mdOnly}>
         <UserManage />
       </MainLayout>
 
-      <MainLayout path='/management/Maintenance' mdOnly={mdOnly} >
+      <MainLayout path='/management/Maintenance' mdOnly={mdOnly}>
         <Maintenance />
       </MainLayout>
 
