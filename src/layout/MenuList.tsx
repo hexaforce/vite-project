@@ -1,27 +1,6 @@
+import { FormatListNumbered, Groups, LibraryBooks, ManageAccounts, ManageHistory, MiscellaneousServices, Payment, PostAdd, Psychology, Quiz } from '@mui/icons-material'
+import { Chip, Divider, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from '@mui/material'
 import { Component, Fragment, h } from 'preact'
-
-import {
-  Chip,
-  Divider,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  ListSubheader
-} from '@mui/material'
-
-import {
-  FormatListNumbered,
-  Groups,
-  LibraryBooks,
-  ManageAccounts,
-  ManageHistory,
-  MiscellaneousServices,
-  Payment,
-  PostAdd,
-  Psychology,
-  Quiz
-} from '@mui/icons-material'
 
 const MenuLink = (props: any) => {
   const { icon, text, href } = props

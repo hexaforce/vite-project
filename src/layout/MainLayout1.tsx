@@ -1,23 +1,10 @@
+import { ChevronLeft, Menu, Notifications } from '@mui/icons-material'
+import { Badge, Box, Container, CssBaseline, Divider, IconButton, Toolbar, Typography } from '@mui/material'
 import { Component, Fragment, h } from 'preact'
 import { useState } from 'preact/hooks'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import MuiDrawer from '@mui/material/Drawer'
-import {
-  Badge,
-  Container,
-  Box,
-  CssBaseline,
-  Divider,
-  IconButton,
-  Toolbar,
-  Typography
-} from '@mui/material'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles'
-import {
-  ChevronLeft,
-  Menu,
-  Notifications
-} from '@mui/icons-material'
 import MenuList from '@/layout/MenuList'
 
 const mdTheme = createTheme()
