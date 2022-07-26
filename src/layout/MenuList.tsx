@@ -17,7 +17,7 @@ import PostAddIcon from '@mui/icons-material/PostAdd'
 import PsychologyIcon from '@mui/icons-material/Psychology'
 import QuizIcon from '@mui/icons-material/Quiz'
 
-function MenuLink(props: any) {
+const MenuLink = (props: any) => {
   const { icon, text, href } = props
   return (
     <ListItemButton href={href}>
@@ -27,7 +27,7 @@ function MenuLink(props: any) {
   )
 }
 
-function MenuLinkPro(props: any) {
+const MenuLinkPro = (props: any) => {
   const { icon, text, href } = props
   return (
     <ListItemButton href={href} sx={{ height: 50 }}>

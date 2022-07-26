@@ -82,13 +82,13 @@ export default ({ children, path }: { children: JSX.Element; path: string }) => 
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' noWrap component='div'>
-            Persistent drawer
+            AIエディタ
           </Typography>
         </Toolbar>
       </AppBar>
       <Drawer
         sx={{
-          width: drawerWidth,
+          // width: drawerWidth,
           flexShrink: 0,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
