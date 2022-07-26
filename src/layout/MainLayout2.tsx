@@ -18,6 +18,60 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 const mdTheme = createTheme()
 const drawerWidth = 240
 
+export default ({ children, path }: { children: JSX.Element; path: string }) => {
+  const theme = useTheme()
+  const [open, setOpen] = useState(false)
+
+  const handleDrawerOpen = () => {
+    setOpen(true)
+  }
+
+  const handleDrawerClose = () => {
+    setOpen(false)
+  }
+
+  return (
+    <ThemeProvider theme={mdTheme}>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+
+        <AppBar position='fixed' open={open}>
+          <Toolbar>
+            <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerOpen} edge='start' sx={{ mr: 2, ...(open && { display: 'none' }) }}>
+              <MenuIcon />
+            </IconButton>
+            <Typography variant='h6' noWrap component='div'>
+              AIエディタ
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        <Drawer variant='persistent' anchor='left' open={open}
+          sx={{
+            // width: drawerWidth,
+            flexShrink: 0,
+            '& .MuiDrawer-paper': {
+              width: drawerWidth,
+              boxSizing: 'border-box',
+            },
+          }}>
+          <DrawerHeader>
+            <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
+          </DrawerHeader>
+          <Divider />
+          <MenuList />
+        </Drawer>
+
+        <Main open={open}>
+          <DrawerHeader />
+          {children}
+        </Main>
+
+      </Box>
+    </ThemeProvider>
+  )
+}
+
 const Main = styled(Fragment, { shouldForwardProp: (prop) => prop !== 'open' })<{ open?: boolean }>(({ theme, open }) => ({
   flexGrow: 1,
   padding: theme.spacing(3),
@@ -62,57 +116,3 @@ const DrawerHeader = styled(Fragment)(({ theme }) => ({
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 }))
-
-export default ({ children, path }: { children: JSX.Element; path: string }) => {
-  const theme = useTheme()
-  const [open, setOpen] = useState(false)
-
-  const handleDrawerOpen = () => {
-    setOpen(true)
-  }
-
-  const handleDrawerClose = () => {
-    setOpen(false)
-  }
-
-  return (
-    <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar position='fixed' open={open}>
-          <Toolbar>
-            <IconButton color='inherit' aria-label='open drawer' onClick={handleDrawerOpen} edge='start' sx={{ mr: 2, ...(open && { display: 'none' }) }}>
-              <MenuIcon />
-            </IconButton>
-            <Typography variant='h6' noWrap component='div'>
-              AIエディタ
-            </Typography>
-          </Toolbar>
-        </AppBar>
-        <Drawer
-          sx={{
-            // width: drawerWidth,
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
-              width: drawerWidth,
-              boxSizing: 'border-box',
-            },
-          }}
-          variant='persistent'
-          anchor='left'
-          open={open}
-        >
-          <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}</IconButton>
-          </DrawerHeader>
-          <Divider />
-          <MenuList />
-        </Drawer>
-        <Main open={open}>
-          <DrawerHeader />
-          {children}
-        </Main>
-      </Box>
-    </ThemeProvider>
-  )
-}
