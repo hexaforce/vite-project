@@ -38,7 +38,7 @@ function MenuLinkPro(props: any) {
   )
 }
 
-export default function DrawerMenu(props: any) {
+export default () => {
   return <List component='nav'>
     <MenuLink icon={<PostAddIcon />} text='新しい記事' href='/ThemeSelectio' />
     <MenuLink icon={<LibraryBooksIcon />} text='作成した記事一覧' href='/' />

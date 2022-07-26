@@ -34,7 +34,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   },
 }))
 
-export default function DrawerMenu(props: any) {
+export default (props: any) => {
   const { open, setOpen } = props
   const toggleDrawer = () => {
     setOpen(!open)

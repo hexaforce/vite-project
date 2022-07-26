@@ -31,7 +31,7 @@ const AppBar = styled(MuiAppBar, { shouldForwardProp: (prop) => prop !== 'open',
   }),
 }))
 
-export default function HeadAppBar(props: any) {
+export default (props: any) => {
   const { open, setOpen } = props
 
   const toggleDrawer = () => {
