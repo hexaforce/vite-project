@@ -1,5 +1,5 @@
-import DrawerMenu from './DrawerMenu'
-import HeadAppBar from './HeadAppBar'
+import DrawerMenu from './SideDrawer1'
+import HeadAppBar from './HeadAppBar1'
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
 import Box from '@mui/material/Box'
@@ -11,7 +11,7 @@ import Copyright from '@/contents/component/Copyright'
 
 const mdTheme = createTheme()
 
-export default function App({ children, path }: { children: JSX.Element; path: string }) {
+export default ({ children, path }: { children: JSX.Element; path: string }) => {
   const [open, setOpen] = useState(false)
 
   return (
